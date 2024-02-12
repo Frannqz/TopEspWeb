@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="assets/fonts/sb-bistro/sb-bistro.css" rel="stylesheet" type="text/css">
-    <link href="assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/fonts/sb-bistro/sb-bistro.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" type="text/css" media="all"
         href="{{ asset('assets/packages/bootstrap/bootstrap.css') }}  ">
@@ -32,8 +32,8 @@
         <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-transparent" id="page-navigation">
             <div class="container">
                 <!-- Navbar Brand -->
-                <a href="index.html" class="navbar-brand">
-                    <img src="assets/img/logo/logo.png" alt="">
+                <a href="{{ route('index') }}" class="navbar-brand">
+                    <img src="{{ asset('assets/img/logo/logo.png') }}" alt="">
                 </a>
 
                 <!-- Toggle Button -->
@@ -57,7 +57,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="avatar-header"><img src="assets/img/logo/avatar.jpg"></div> John Doe
+                                <div class="avatar-header"><img src="{{ asset('assets/img/logo/avatar.jpg') }}"></div>
+                                John Doe
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="transaction.html">Transactions History</a>
@@ -77,8 +78,8 @@
                                     <li>
                                         <div class="shopping-cart-list">
                                             <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg"
-                                                    width="60">
+                                                <img class="d-flex mr-3"
+                                                    src="{{ asset('assets/img/logo/avatar.jpg') }}" width="60">
                                                 <div class="media-body">
                                                     <h5><a href="javascript:void(0)">Carrot</a></h5>
                                                     <p class="price">
@@ -89,8 +90,8 @@
                                                 </div>
                                             </div>
                                             <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg"
-                                                    width="60">
+                                                <img class="d-flex mr-3"
+                                                    src="{{ asset('assets/img/logo/avatar.jpg') }}" width="60">
                                                 <div class="media-body">
                                                     <h5><a href="javascript:void(0)">Carrot</a></h5>
                                                     <p class="price">
@@ -101,8 +102,8 @@
                                                 </div>
                                             </div>
                                             <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg"
-                                                    width="60">
+                                                <img class="d-flex mr-3"
+                                                    src="{{ asset('assets/img/logo/avatar.jpg') }}" width="60">
                                                 <div class="media-body">
                                                     <h5><a href="javascript:void(0)">Carrot</a></h5>
                                                     <p class="price">
@@ -113,8 +114,8 @@
                                                 </div>
                                             </div>
                                             <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg"
-                                                    width="60">
+                                                <img class="d-flex mr-3"
+                                                    src="{{ asset('assets/img/logo/avatar.jpg') }}" width="60">
                                                 <div class="media-body">
                                                     <h5><a href="javascript:void(0)">Carrot</a></h5>
                                                     <p class="price">
@@ -207,11 +208,11 @@
                     <h5>Get Our App</h5>
                     <ul class="mb-0">
                         <li class="download-app">
-                            <a href="#"><img src="assets/img/playstore.png"></a>
+                            <a href="#"><img src="{{ asset('assets/img/playstore.png') }}"></a>
                         </li>
                         <li style="height: 200px">
                             <div class="mockup">
-                                <img src="assets/img/mockup.png">
+                                <img src="{{ asset('assets/img/mockup.png') }}">
                             </div>
                         </li>
                     </ul>

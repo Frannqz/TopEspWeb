@@ -21,7 +21,7 @@ use App\Http\Controllers\siteController; // Importa el controlador
 // Route::get('/contact', [siteController::class, 'contact'])->name("contact");
 
 
-Route::get('/', [GroceriesController::class, 'index'])->name("home"); // name("home")
-Route::get('/store/shop', [GroceriesController::class, 'shop'])->name("shop"); // name("home")
-Route::get('/register', [GroceriesController::class, 'register'])->name("register"); // name("home")
-Route::get('/login', [GroceriesController::class, 'login'])->name("login"); // name("home")
+Route::get('/', [GroceriesController::class, 'index'])->name("index"); // name("index")
+Route::get('/store/shop', [GroceriesController::class, 'shop'])->name("shop"); // name("shop")
+Route::get('/register', [GroceriesController::class, 'register'])->name("register"); // name("register")
+Route::get('/login', [GroceriesController::class, 'login'])->name("login"); // name("login")
