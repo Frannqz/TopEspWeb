@@ -25,7 +25,7 @@
                                     <span class="d-flex mr-2"><i class="sb-bistro-carrot"></i></span>
                                     <div class="media-body">
                                         <h5>{{ $c->name }}</h5>
-                                        <p>Freshly Harvested Veggies From Local Growers</p>
+                                        <p>{{ $c->description }}</p>
                                     </div>
                                 </div>
                             </a>
