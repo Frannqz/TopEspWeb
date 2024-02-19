@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GroceriesController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\siteController; // Importa el controlador
 
@@ -26,3 +27,4 @@ Route::get('/store/shop', [GroceriesController::class, 'shop'])->name("shop"); /
 Route::get('/register', [GroceriesController::class, 'register'])->name("register"); // name("register")
 Route::get('/login', [GroceriesController::class, 'login'])->name("login"); // name("login")
 Route::get('/contact', [GroceriesController::class, 'contact'])->name("contact"); // name("contact")
+Route::resource('contact', ContactController::class);

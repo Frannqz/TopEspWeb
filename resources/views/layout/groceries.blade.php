@@ -56,7 +56,7 @@
                             <a href="{{ route('login') }}" class="nav-link">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('contact') }}" class="nav-link">Contact</a>
+                            <a href="{{ route('contact.index') }}" class="nav-link">Contact</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"

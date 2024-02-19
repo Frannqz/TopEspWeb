@@ -14,6 +14,22 @@
         </div>
     </div>
 
+    @if (session()->get('success'))
+        <div class="alert alert-success text-center">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <section class="pb-0">
         <div class="contact1 mb-5">
             <div class="container">
@@ -21,21 +37,25 @@
                     <div class="col-lg-7">
                         <div class="contact-wrapper">
                             <h3 class="title font-weight-normal mt-0 text-left">Send Us a Message</h3>
-                            <form data-aos="fade-left" data-aos-duration="1200">
+                            <form data-aos="fade-left" data-aos-duration="1200" action="{{ route('contact.store') }}"
+                                method="POST">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Full Name">
+                                            <input class="form-control" type="text" placeholder="Full Name"
+                                                name="fullname" value="{{ old('fullname') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="form-control" type="email" placeholder="Email">
+                                            <input class="form-control" type="email" placeholder="Email" name="email"
+                                                value="{{ old('email') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="Message" name="message" value="{{ old('message') }}"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-right">
