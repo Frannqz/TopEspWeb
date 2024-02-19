@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/css" media="all"
         href="{{ asset('assets/packages/bootstrap/bootstrap.css') }}  ">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css/style.css') }}  ">
     <link rel="stylesheet" type="text/css" media="all"
         href="{{ asset('assets/packages/o2system-ui/o2system-ui.css') }} ">
     <link rel="stylesheet" type="text/css" media="all"
@@ -54,7 +55,9 @@
                         <li class="nav-item">
                             <a href="{{ route('login') }}" class="nav-link">Login</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="{{ route('contact') }}" class="nav-link">Contact</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -148,6 +151,7 @@
         </nav>
     </div>
     <div id="page-content" class="page-content">
+        <button id="go-to-top-btn" class="btn btn-primary">Volver Arriba</button>
         @yield('main_content')
     </div>
     <footer>
@@ -234,6 +238,7 @@
     <script type="text/javascript" src="{{ asset('assets/packages/bootstrap-touchspin/bootstrap-touchspin.js') }}">
     </script>
     <script type="text/javascript" src="{{ asset('assets/js/theme.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/index.js') }}"></script>
 </body>
 
 </html>

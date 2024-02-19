@@ -20,9 +20,9 @@
                 <div class="shop-categories owl-carousel mt-5">
                     @foreach ($categories as $c)
                         <div class="item">
-                            <a href="{{ route('shop') }}">
+                            <a href="#{{$c->name}}">
                                 <div class="media d-flex align-items-center justify-content-center">
-                                    <span class="d-flex mr-2"><i class="sb-bistro-carrot"></i></span>
+                                    <span class="d-flex mr-2"><i class="sb-bistro-{{$c->icon}}"></i></span>
                                     <div class="media-body">
                                         <h5>{{ $c->name }}</h5>
                                         <p>{{ $c->description }}</p>
@@ -85,7 +85,7 @@
     </section>
 
     @foreach ($categories as $cat)
-        <section id="vegetables" class="gray-bg">
+        <section id="{{$cat->name}}" class="gray-bg">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

@@ -29,4 +29,7 @@ class GroceriesController extends Controller
     public function login() {
         return view("groceries.login");
     }
+    public function contact() {
+        return view("groceries.contact");
+    }
 }
