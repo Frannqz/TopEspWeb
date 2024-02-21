@@ -34,7 +34,8 @@ class GroceriesController extends Controller
     }
      public function product_details($id) {
           $product = Product::find($id);
-          return view("groceries.product_details", compact("product"));
+          $products = Product::all();
+          return view("groceries.product_details", compact("product","products"));
     }
 //     public function product_details() {
 //         return view("groceries.product_details");
