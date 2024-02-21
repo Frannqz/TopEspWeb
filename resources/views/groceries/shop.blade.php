@@ -113,13 +113,13 @@
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href="{{route('product_details',['id' => $p->id])}}">{{$product->name}}</a>
+                                            <a href="{{route('product_details',['id' => $cat->id])}}">{{$product->name}}</a>
                                         </h4>
                                         <div class="card-price">
                                             <span class="discount">{{$product->purchase_price}}</span>
                                             <span class="reguler">{{$product->sale_price}}</span>
                                         </div>
-                                        <a href="{{route('product_details',['id' => $p->id])}}" class="btn btn-block btn-primary">
+                                        <a href="{{route('product_details',['id' => $cat->id])}}" class="btn btn-block btn-primary">
                                             Add to Cart
                                         </a>
 
