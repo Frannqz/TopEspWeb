@@ -32,4 +32,12 @@ class GroceriesController extends Controller
     public function contact() {
         return view("groceries.contact");
     }
+     public function product_details($id) {
+          $product = Product::find($id);
+          return view("groceries.product_details", compact("product"));
+    }
+//     public function product_details() {
+//         return view("groceries.product_details");
+// }
+
 }
