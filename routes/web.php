@@ -30,4 +30,5 @@ Route::get('/login', [GroceriesController::class, 'login'])->name("login"); // n
 Route::get('/contact', [GroceriesController::class, 'contact'])->name("contact"); // name("contact")
 Route::get('/product_details/{id}', [GroceriesController::class, 'product_details'])->name("product_details");
 Route::resource('contact', ContactController::class);
-Route::resource('product_details', CommentsController::class);
+// Route::resource('product_details', CommentsController::class);
+Route::post('/product_details/{id}', [CommentsController::class, 'store'])->name('product_details.store');

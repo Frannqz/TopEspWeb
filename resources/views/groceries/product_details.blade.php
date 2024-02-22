@@ -82,8 +82,8 @@
                     </button>
                     <br><br><br>
                     <h3>Enviar comentario</h3>
-                    <form data-aos="fade-left" data-aos-duration="1200" action="{{ route('product_details.store') }}"
-                        method="POST">
+                    <form data-aos="fade-left" data-aos-duration="1200"
+                        action="{{ route('product_details.store', ['id' => $product->id]) }}" method="POST">
                         @csrf
 
                         <div class="row">

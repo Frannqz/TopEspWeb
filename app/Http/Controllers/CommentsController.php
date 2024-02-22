@@ -28,7 +28,7 @@ class CommentsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         if ($request->isMethod('post'))
         {
@@ -46,8 +46,9 @@ class CommentsController extends Controller
             $comments->email = $request->input('email');
             $comments->message = $request->input('message');
             $comments->category_id = $request->input('category_id');
+            $comments->category_id = $id;
             $comments->save();
-            return redirect()->route('product_details.index')->with('success', 'You message has been sent.');
+            return redirect()->route('product_details.index', ['category_id'=>$id])->with('success', 'You message has been sent.');
         }
     }
 
