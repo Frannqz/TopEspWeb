@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 
 class GroceriesController extends Controller
@@ -35,10 +36,7 @@ class GroceriesController extends Controller
      public function product_details($id) {
           $product = Product::find($id);
           $products = Product::all();
-          return view("groceries.product_details", compact("product","products"));
+          $comments = Comments::where('category_id', $id)->get();
+          return view("groceries.product_details", compact("product","products","comments"));
     }
-//     public function product_details() {
-//         return view("groceries.product_details");
-// }
-
 }

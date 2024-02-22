@@ -1,6 +1,21 @@
 @extends('layout.groceries')
 
 @section('main_content')
+    @if (session()->get('success'))
+        <div class="alert alert-success text-center">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="banner">
         <div class="jumbotron jumbotron-bg text-center rounded-0"
             style="background-image: url({{ asset('assets/img/bg-header.jpg') }});">
@@ -67,9 +82,10 @@
                     </button>
                     <br><br><br>
                     <h3>Enviar comentario</h3>
-                    <form data-aos="fade-left" data-aos-duration="1200" action="{{ route('contact.store') }}"
+                    <form data-aos="fade-left" data-aos-duration="1200" action="{{ route('product_details.store') }}"
                         method="POST">
                         @csrf
+
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -92,12 +108,32 @@
                                 <button type="submit" class="btn btn-lg btn-primary mb-5">Send</button>
                             </div>
                         </div>
+                        <input type="hidden" name="category_id" value="{{ $product->category_id }}">
+
                     </form>
                 </div>
+                <div class="col-lg-12">
+                    <h3>Comentarios de otros clientes</h3>
+                    <ul>
+                        @foreach ($comments as $comment)
+                            <li>
+                                <strong>{{ $comment->fullname }}</strong> dijo:
+                                <p>{{ $comment->message }}</p>
+                                <small>Enviado el {{ $comment->created_at->format('d/m/Y H:i') }}</small>
+                                <br><br>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
 
             </div>
         </div>
+
     </div>
+    </div>
+
+
 
     <section id="related-product">
         <div class="container">
