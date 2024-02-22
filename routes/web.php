@@ -28,7 +28,9 @@ Route::get('/store/shop', [GroceriesController::class, 'shop'])->name("shop"); /
 Route::get('/register', [GroceriesController::class, 'register'])->name("register"); // name("register")
 Route::get('/login', [GroceriesController::class, 'login'])->name("login"); // name("login")
 Route::get('/contact', [GroceriesController::class, 'contact'])->name("contact"); // name("contact")
-Route::get('/product_details/{id}', [GroceriesController::class, 'product_details'])->name("product_details");
+Route::get('/product_details/{id}', [GroceriesController::class, 'product_details'])->name("details");
 Route::resource('contact', ContactController::class);
+Route::post('/product_details/{id}/comments', [CommentsController::class, 'store'])->name('comments.store');
+
 // Route::resource('product_details', CommentsController::class);
-Route::post('/product_details/{id}', [CommentsController::class, 'store'])->name('product_details.store');
+// Route::post('/product_details/{id}', [CommentsController::class, 'store'])->name('product_details.store');

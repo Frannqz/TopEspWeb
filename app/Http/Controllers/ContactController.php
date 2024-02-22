@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\CorreoAdminSend;
+
 class ContactController extends Controller
 {
     /**
@@ -43,7 +46,14 @@ class ContactController extends Controller
             $contact->email = $request->input('email');
             $contact->message = $request->input('message');
             $contact->save();
-            return redirect()->route('contact.index')->with('success', 'You message has been sent.');
+
+            // Envía la por correo electrónico al administrador
+            Notification::route('mail', 'franqzdev@gmail.com')
+                ->notify(new CorreoAdminSend($contact));
+
+            // Redirige con un mensaje de éxito
+            return redirect()->route('contact.index')->with('success', 'Tu mensaje ha sido enviado correctamente.');
+
         }
     }
 

@@ -48,7 +48,8 @@ class CommentsController extends Controller
             $comments->category_id = $request->input('category_id');
             $comments->category_id = $id;
             $comments->save();
-            return redirect()->route('product_details.index', ['category_id'=>$id])->with('success', 'You message has been sent.');
+            return redirect()->route('details', ['id' => $id])->with('success', 'Tu mensaje ha sido enviado correctamente.');
+
         }
     }
 

@@ -83,7 +83,7 @@
                     <br><br><br>
                     <h3>Enviar comentario</h3>
                     <form data-aos="fade-left" data-aos-duration="1200"
-                        action="{{ route('product_details.store', ['id' => $product->id]) }}" method="POST">
+                        action="{{ route('comments.store', ['id' => $product->id]) }}" method="POST">
                         @csrf
 
                         <div class="row">
@@ -163,14 +163,13 @@
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a
-                                                href="{{ route('product_details', ['id' => $p->id]) }}">{{ $p->name }}</a>
+                                            <a href="{{ route('details', ['id' => $p->id]) }}">{{ $p->name }}</a>
                                         </h4>
                                         <div class="card-price">
                                             <span class="discount">{{ $p->purchase_price }}</span>
                                             <span class="reguler">{{ $p->sale_price }}</span>
                                         </div>
-                                        <a href="{{ route('product_details', ['id' => $p->id]) }}"
+                                        <a href="{{ route('details', ['id' => $p->id]) }}"
                                             class="btn btn-block btn-primary">
                                             Add to Cart
                                         </a>
