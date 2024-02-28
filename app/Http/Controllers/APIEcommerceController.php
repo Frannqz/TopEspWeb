@@ -12,4 +12,10 @@ class APIEcommerceController extends Controller
         $products = Product::with("category")->get();
         return response()->json($products);
     }
+
+    public function products_dt() {
+        // $products = Product::all();
+        $products = Product::with("category")->get();
+        return response()->json(["data"=>$products]);
+    }
 }

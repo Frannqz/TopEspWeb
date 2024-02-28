@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/products', [APIEcommerceController::class,'products'])->name('api.products.list');
+//Ruta para indicar el web service para datatable
+Route::get('/products_dt', [APIEcommerceController::class,'products_dt'])->name('api.products_dt');

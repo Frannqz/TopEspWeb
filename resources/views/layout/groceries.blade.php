@@ -25,6 +25,10 @@
         href="{{ asset('assets/packages/bootstrap-touchspin/bootstrap-touchspin.css') }}">
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css/theme.css') }}">
 
+    <link rel="stylesheet" type="text/css" media="all"
+        href="//cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
+
+
 </head>
 
 <body>
@@ -240,6 +244,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/theme.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/index.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/groceries.js') }}"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
 </body>
 
 </html>

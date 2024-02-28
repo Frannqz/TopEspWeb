@@ -3,7 +3,7 @@ $(document).ready(init);
 function init() {
     $("#loadProductsBtn").click(function () {
         $.getJSON("/api/products", function (data) {
-            console.table(data);
+            // console.table(data);
             $.each(data, function (index, dataObj) {
                 $("#tblProducts tbody:last-child").append(
                     "<tr>" +
@@ -14,6 +14,19 @@ function init() {
                     "<td>" + dataObj.category.name + "</td>" +
                     "</tr>");
             });
+            let table = new DataTable('#tblProducts');
+
         });
+    });
+
+    let tblProducts = new DataTable('#tblProductsDt', {
+        ajax: '/api/products_dt',
+        columns: [
+            { data: 'id' },
+            { data: 'name' },
+            { data: 'sale_price' },
+            { data: 'quantity' },
+            { data: 'category.name' },
+        ]
     });
 }
