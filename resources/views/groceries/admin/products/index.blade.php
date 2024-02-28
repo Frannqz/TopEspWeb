@@ -41,7 +41,20 @@
                             </table>
                         </div>
                     </div>
+
                     <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="categoryFilter">Filtrar por Category:</label>
+                            <select class="form-control" id="categoryFilter" style="padding:5px;">
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Frozen Foods">Frozen Foods</option>
+                                <option value="Packages">Packages</option>
+                                <option value="Meats">Meats</option>
+                                <option value="Fishes">Fishes</option>
+                                <option value="Fruits">Fruits</option>
+                            </select>
+                        </div>
+
                         <div class="table-responsive">
                             <br>
                             <table class="table table-striped table-bordered" id="tblProductsDt">

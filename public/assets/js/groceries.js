@@ -1,3 +1,5 @@
+let tblProducts; // Variable global para DataTable
+
 $(document).ready(init);
 
 function init() {
@@ -15,11 +17,18 @@ function init() {
                     "</tr>");
             });
             let table = new DataTable('#tblProducts');
-
         });
     });
 
-    let tblProducts = new DataTable('#tblProductsDt', {
+    // Escuchar cambios en el ComboBox de categorías
+    $('#categoryFilter').change(function () {
+        // Obtener el valor seleccionado del ComboBox
+        let category = $(this).val();
+        // Filtrar los productos por categoría y cargar los datos en la tabla
+        tblProducts.ajax.url('/api/products_dt?category=' + category).load();
+    });
+
+    tblProducts = new DataTable('#tblProductsDt', {
         ajax: '/api/products_dt',
         columns: [
             { data: 'id' },
