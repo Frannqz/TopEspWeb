@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\GroceriesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\siteController; // Importa el controlador
 
@@ -31,6 +32,7 @@ Route::get('/contact', [GroceriesController::class, 'contact'])->name("contact")
 Route::get('/product_details/{id}', [GroceriesController::class, 'product_details'])->name("details");
 Route::resource('contact', ContactController::class);
 Route::post('/product_details/{id}/comments', [CommentsController::class, 'store'])->name('comments.store');
+Route::get('/admin/products', [ProductsController::class, 'index'])->name('admin.products.index');
 
 // Route::resource('product_details', CommentsController::class);
 // Route::post('/product_details/{id}', [CommentsController::class, 'store'])->name('product_details.store');
