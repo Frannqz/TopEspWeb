@@ -22,17 +22,21 @@
                     <button class="btn btn-primary" id="loadProductsBtn">Load Products</button>
                     <div class="table-responsive">
                         <br>
-                        <table class="table table-striped table-bordered">
+                        <table class="table table-striped table-bordered" id="tblProducts">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
                                     <th>PRICE</th>
                                     <th>QUANTITY</th>
+                                    <th>CATEGORY</th>
                                 </tr>
                             </thead>
-                            <tbody id="productsTableBody">
+                            <tbody>
+
                             </tbody>
+                            {{-- <tbody id="productsTableBody">
+                            </tbody> --}}
                         </table>
                     </div>
                 </div>
@@ -40,8 +44,8 @@
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    {{-- <script>
         $(document).ready(function() {
             $('#loadProductsBtn').click(function() {
                 $.get('/api/products', function(data) {
@@ -58,5 +62,5 @@
                 });
             });
         });
-    </script>
+    </script> --}}
 @endsection

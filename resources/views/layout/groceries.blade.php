@@ -239,6 +239,7 @@
     </script>
     <script type="text/javascript" src="{{ asset('assets/js/theme.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/index.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/groceries.js') }}"></script>
 </body>
 
 </html>
