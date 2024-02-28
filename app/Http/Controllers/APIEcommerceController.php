@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use Symfony\Component\Console\Input\Input;
 
 class APIEcommerceController extends Controller
 {
@@ -15,7 +14,7 @@ class APIEcommerceController extends Controller
     }
 
     public function products_dt(Request $request) {
-        $category = $request->input('category'); // Se obtiene los valores del parámetro 'category'
+        $category = $request->input('category'); // Se obtiene los valores de 'category'
         $query = Product::query()->with("category");
         if ($category) {
             $query->whereHas('category', function($q) use ($category) {

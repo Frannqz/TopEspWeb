@@ -46,6 +46,7 @@
                         <div class="form-group">
                             <label for="categoryFilter">Filtrar por Category:</label>
                             <select class="form-control" id="categoryFilter" style="padding:5px;">
+                                <option value="">All</option>
                                 <option value="Vegetables">Vegetables</option>
                                 <option value="Frozen Foods">Frozen Foods</option>
                                 <option value="Packages">Packages</option>
