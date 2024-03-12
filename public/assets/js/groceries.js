@@ -1,4 +1,5 @@
 let tblProducts; // Variable global para DataTable
+let tblEmployees;
 
 $(document).ready(init);
 
@@ -38,4 +39,19 @@ function init() {
             { data: 'category.name' },
         ]
     });
+
+
+    // tblEmployees = new DataTable('#tableEmployees', {
+    //     ajax: 'http://localhost:3000/employees',
+    //     columns: [
+    //         { data: 'emp_no' },
+    //         { data: 'first_name' },
+    //         { data: 'last_name' },
+    //         { data: 'email' },
+    //         { data: 'salary' },
+    //         { data: 'gender' },
+    //         { data: 'department' },
+    //         { data: 'hire_date' }
+    //     ]
+    // });
 }
